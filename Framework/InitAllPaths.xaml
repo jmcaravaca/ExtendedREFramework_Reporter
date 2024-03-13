@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1145,1566</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1168,2424</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Init all Paths from &quot;Paths&quot;sheet in Config File" sap:VirtualizedContainerService.HintSize="730,1501" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap2010:Annotation.AnnotationText="Init all Paths from &quot;Paths&quot;sheet in Config File" sap:VirtualizedContainerService.HintSize="807.3333333333334,2359.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ConfigFile" />
     </Sequence.Variables>
@@ -122,7 +122,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign ConfigFile" sap:VirtualizedContainerService.HintSize="668,82" sap2010:WorkflowViewState.IdRef="Assign_27">
+    <ui:LogMessage DisplayName="Log Message InitPaths" sap:VirtualizedContainerService.HintSize="745.3333333333334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Init all paths&quot;]" />
+    <Assign DisplayName="Assign ConfigFile" sap:VirtualizedContainerService.HintSize="745.3333333333334,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_27">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ConfigFile]</OutArgument>
       </Assign.To>
@@ -130,7 +131,7 @@
         <InArgument x:TypeArguments="x:String">[io_Config("ConfigPath").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try initializing Paths" sap:VirtualizedContainerService.HintSize="668,1237" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+    <TryCatch DisplayName="Try initializing Paths" sap:VirtualizedContainerService.HintSize="745.3333333333334,1908" sap2010:WorkflowViewState.IdRef="TryCatch_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,7 +139,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Get from Orchestrator the values of assets listed in the Assets sheet." DisplayName="Calculate Paths" sap:VirtualizedContainerService.HintSize="630,1009" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence sap2010:Annotation.AnnotationText="Get from Orchestrator the values of assets listed in the Assets sheet." DisplayName="Calculate Paths" sap:VirtualizedContainerService.HintSize="706.6666666666666,1668.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_Paths" />
           </Sequence.Variables>
@@ -149,8 +150,8 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Paths]" DisplayName="Read range (Assets sheet)" sap:VirtualizedContainerService.HintSize="568,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Paths" WorkbookPath="[ConfigFile]" />
-          <ui:FilterDataTable DataTable="[dt_Paths]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="568,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_Paths]" SelectColumnsMode="Keep">
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Paths]" DisplayName="Read range (Assets sheet)" sap:VirtualizedContainerService.HintSize="644.6666666666666,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Paths" WorkbookPath="[ConfigFile]" />
+          <ui:FilterDataTable DataTable="[dt_Paths]" DisplayName="Filter Data Table Remove Empty" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="644.6666666666666,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_Paths]" SelectColumnsMode="Keep">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                 <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -176,13 +177,13 @@
               </scg:List>
             </ui:FilterDataTable.SelectColumns>
           </ui:FilterDataTable>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Paths]" DisplayName="For each path row" sap:VirtualizedContainerService.HintSize="568,538" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Paths]" DisplayName="For each path row" sap:VirtualizedContainerService.HintSize="644.6666666666666,1195.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                 </ActivityAction.Argument>
-                <TryCatch DisplayName="Try Calculating path" sap:VirtualizedContainerService.HintSize="534,421" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                <TryCatch DisplayName="Try Calculating path" sap:VirtualizedContainerService.HintSize="610.6666666666666,1005.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,27 +191,61 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Get asset from Orchestrator" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="ui:GenericValue" Name="AssetValue" />
-                      </Sequence.Variables>
+                    <Sequence DisplayName="Get asset from Orchestrator" sap:VirtualizedContainerService.HintSize="572,766" sap2010:WorkflowViewState.IdRef="Sequence_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign path combined" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                      <Assign DisplayName="Assign path combined" sap:VirtualizedContainerService.HintSize="510,86" sap2010:WorkflowViewState.IdRef="Assign_26">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[io_Config(row("Name").ToString)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Object">[Path.Combine(io_Config(row("BasePathName").ToString).ToString, io_Config(row("EndpointPathName").ToString).ToString.TrimStart("\"c))]</InArgument>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Combine(io_Config(row("BasePathName").ToString).ToString.TrimEnd("\"c,  "/"c) , _
+io_Config(row("EndpointPathName").ToString).ToString.TrimStart("\"c,  "/"c))]</InArgument>
                         </Assign.Value>
                       </Assign>
+                      <If Condition="[Row(&quot;Type&quot;).ToString.StartsWith(&quot;Windows&quot;)]" DisplayName="If Windows Separator" sap:VirtualizedContainerService.HintSize="510,529.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign Replace windows separator" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_28">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[io_Config(row("Name").ToString)]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[io_Config(row("Name").ToString.Replace("/","\"))]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign use unix separator" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_29">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[io_Config(row("Name").ToString)]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[io_Config(row("Name").ToString.Replace("\","/"))]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="576.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -221,7 +256,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                         </ActivityAction.Argument>
-                        <Throw DisplayName="Throw Path does not exist Exception" Exception="[new Exception(&quot;Could not combine path for name: &quot; + row(&quot;Name&quot;).ToString + &quot; failed: &quot; + Exception.Message)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        <Throw DisplayName="Throw Path does not exist Exception" Exception="[new Exception(&quot;Could not combine path for name: &quot; + row(&quot;Name&quot;).ToString + &quot; failed: &quot; + Exception.Message)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_3" />
                       </ActivityAction>
                     </Catch>
                   </TryCatch.Catches>
@@ -238,7 +273,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="634,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="711.3333333333334,22" sap2010:WorkflowViewState.IdRef="Catch`1_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -249,7 +284,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
             </ActivityAction.Argument>
-            <Rethrow DisplayName="Rethrow loading asset exception" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
+            <Rethrow DisplayName="Rethrow loading asset exception" sap:VirtualizedContainerService.HintSize="334,25.333333333333332" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
