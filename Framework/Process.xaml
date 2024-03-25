@@ -174,10 +174,21 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetDataforeachqueueitem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="492,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Reporting\GetDataforeachqueueitem.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="io_TransactionItem">[io_TransactionItem]</InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtSummaryBusiness">[dtSummaryBusiness]</InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtSummarySystem">[dtSummarySystem]</InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtDetails">[dtDetails]</InOutArgument>
+        <InOutArgument x:TypeArguments="scg:List(ui:QueueItem)" x:Key="io_TransactionItem">
+          <VisualBasicReference x:TypeArguments="scg:List(ui:QueueItem)" ExpressionText="io_TransactionItem" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtSummaryBusiness">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtSummaryBusiness" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtSummarySystem">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtSummarySystem" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtDetails">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtDetails" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Summaries Business" sap:VirtualizedContainerService.HintSize="492,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Reporting\GetDatatableSummaries.xaml">

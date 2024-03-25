@@ -1,0 +1,349 @@
+{
+  "entities": [
+    {
+      "name": "RPAErrorApps",
+      "displayName": "RPAErrorApps",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "",
+      "fields": [
+        {
+          "name": "Number",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Number",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Description",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Description",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        }
+      ],
+      "isRbacEnabled": false,
+      "invalidIdentifiers": [],
+      "isModelReserved": false
+    },
+    {
+      "name": "RPAErrorCodes",
+      "displayName": "RPAErrorCodes",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "",
+      "fields": [
+        {
+          "name": "DescriptionES",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "DescriptionES",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Type",
+          "isPrimaryKey": false,
+          "isForeignKey": true,
+          "isUnique": false,
+          "referenceEntity": {
+            "name": "RPAErrorTypes",
+            "displayName": "RPAErrorTypes",
+            "entityTypeId": 0,
+            "entityType": "Entity",
+            "isRbacEnabled": false,
+            "invalidIdentifiers": [],
+            "isModelReserved": false
+          },
+          "referenceField": {
+            "definition": {
+              "name": "Number",
+              "isPrimaryKey": false,
+              "isForeignKey": false,
+              "isUnique": false,
+              "referenceType": "ManyToOne",
+              "sqlType": {
+                "name": "NVARCHAR",
+                "lengthLimit": 200
+              },
+              "isRequired": false,
+              "displayName": "Number",
+              "isSystemField": false,
+              "fieldDisplayType": "Basic",
+              "isAttachment": false,
+              "isRbacEnabled": false,
+              "isModelReserved": false
+            }
+          },
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "UNIQUEIDENTIFIER",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Type",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Relationship",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "App",
+          "isPrimaryKey": false,
+          "isForeignKey": true,
+          "isUnique": false,
+          "referenceEntity": {
+            "name": "RPAErrorApps",
+            "displayName": "RPAErrorApps",
+            "entityTypeId": 0,
+            "entityType": "Entity",
+            "isRbacEnabled": false,
+            "invalidIdentifiers": [],
+            "isModelReserved": false
+          },
+          "referenceField": {
+            "definition": {
+              "name": "Number",
+              "isPrimaryKey": false,
+              "isForeignKey": false,
+              "isUnique": false,
+              "referenceType": "ManyToOne",
+              "sqlType": {
+                "name": "NVARCHAR",
+                "lengthLimit": 200
+              },
+              "isRequired": false,
+              "displayName": "Number",
+              "isSystemField": false,
+              "fieldDisplayType": "Basic",
+              "isAttachment": false,
+              "isRbacEnabled": false,
+              "isModelReserved": false
+            }
+          },
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "UNIQUEIDENTIFIER",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "App",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Relationship",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Process",
+          "isPrimaryKey": false,
+          "isForeignKey": true,
+          "isUnique": false,
+          "referenceEntity": {
+            "name": "RPAErrorProcesses",
+            "displayName": "RPAErrorProcesses",
+            "entityTypeId": 0,
+            "entityType": "Entity",
+            "isRbacEnabled": false,
+            "invalidIdentifiers": [],
+            "isModelReserved": false
+          },
+          "referenceField": {
+            "definition": {
+              "name": "Number",
+              "isPrimaryKey": false,
+              "isForeignKey": false,
+              "isUnique": false,
+              "referenceType": "ManyToOne",
+              "sqlType": {
+                "name": "NVARCHAR",
+                "lengthLimit": 200
+              },
+              "isRequired": false,
+              "displayName": "Number",
+              "isSystemField": false,
+              "fieldDisplayType": "Basic",
+              "isAttachment": false,
+              "isRbacEnabled": false,
+              "isModelReserved": false
+            }
+          },
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "UNIQUEIDENTIFIER",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Process",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Relationship",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Sequence",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Sequence",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        }
+      ],
+      "isRbacEnabled": false,
+      "invalidIdentifiers": [],
+      "isModelReserved": false
+    },
+    {
+      "name": "RPAErrorProcesses",
+      "displayName": "RPAErrorProcesses",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "",
+      "fields": [
+        {
+          "name": "Number",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Number",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Description",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Description",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        }
+      ],
+      "isRbacEnabled": false,
+      "invalidIdentifiers": [],
+      "isModelReserved": false
+    },
+    {
+      "name": "RPAErrorTypes",
+      "displayName": "RPAErrorTypes",
+      "entityTypeId": 0,
+      "entityType": "Entity",
+      "description": "",
+      "fields": [
+        {
+          "name": "Description",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": false,
+          "displayName": "Description",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        },
+        {
+          "name": "Number",
+          "isPrimaryKey": false,
+          "isForeignKey": false,
+          "isUnique": false,
+          "referenceType": "ManyToOne",
+          "sqlType": {
+            "name": "NVARCHAR",
+            "lengthLimit": 200
+          },
+          "isRequired": true,
+          "displayName": "Number",
+          "description": "",
+          "isSystemField": false,
+          "fieldDisplayType": "Basic",
+          "isAttachment": false,
+          "isRbacEnabled": false,
+          "isModelReserved": false
+        }
+      ],
+      "isRbacEnabled": false,
+      "invalidIdentifiers": [],
+      "isModelReserved": false
+    }
+  ],
+  "choicesets": []
+}
