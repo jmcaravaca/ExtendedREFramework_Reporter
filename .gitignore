@@ -1,6 +1,5 @@
 .local
 .project
-.entities
 .settings
 .tmh
 .variations/config.json
