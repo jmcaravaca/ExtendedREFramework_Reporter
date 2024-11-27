@@ -6,7 +6,7 @@
     <x:Property Name="io_dtDetails" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1176,1767</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1156,1767</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -189,7 +189,7 @@
                   </InArgument>
                 </Assign.Value>
               </Assign>
-              <Sequence x:Key="Failed" sap:VirtualizedContainerService.HintSize="572,1377" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence x:Key="Failed" sap:VirtualizedContainerService.HintSize="596,681" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="s:String[]" Name="detailsSplit" />
                   <Variable x:TypeArguments="sd:DataRow" Name="rowSummaryBusiness" />
@@ -412,9 +412,9 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
                   <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
                 </InArgument>
-                <InArgument x:TypeArguments="sd:DataRow" x:Key="io_DataRow">
-                  <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="rowDetails" />
-                </InArgument>
+                <InOutArgument x:TypeArguments="sd:DataRow" x:Key="io_DataRow">
+                  <VisualBasicReference x:TypeArguments="sd:DataRow" ExpressionText="rowDetails" />
+                </InOutArgument>
                 <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_QueueItem">
                   <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="qitem" />
                 </InArgument>
