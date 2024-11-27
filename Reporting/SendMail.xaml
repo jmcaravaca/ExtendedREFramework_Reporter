@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1094,996</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1134,996</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -146,7 +146,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <r:SendMail_Information sap:VirtualizedContainerService.HintSize="334,519" sap2010:WorkflowViewState.IdRef="SendMail_Information_2" in_Attachments="[New String(){in_Config(&quot;ReportOutputPath&quot;).ToString}]" in_BodyText="[in_Config(&quot;MailBody&quot;).ToString]" in_Config="[in_Config]" in_ContactLanguage="[in_Config(&quot;MailContactLanguage&quot;).ToString]" in_ContinueError="True" in_DateTimeStart="[CType(in_Config(&quot;StartProcessingDate&quot;), DateTime).ToString(&quot;s&quot;)]" in_MailCC="[Split(in_Config(&quot;MailCC_All&quot;).ToString,&quot;;&quot;)]" in_MailCCO="[Split(in_Config(&quot;MailBCC_All&quot;).ToString,&quot;;&quot;)]" in_MailTo="[Split(in_Config(&quot;MailTO_All&quot;).ToString,&quot;;&quot;)]">
+          <r:SendMail_Information sap:VirtualizedContainerService.HintSize="334,519" sap2010:WorkflowViewState.IdRef="SendMail_Information_2" in_Attachments="[New String(){in_Config(&quot;ReportOutputPath&quot;).ToString}]" in_BodyText="[in_Config(&quot;MailBody&quot;).ToString]" in_Config="[in_Config]" in_ContactLanguage="[in_Config(&quot;MailContactLanguage&quot;).ToString]" in_ContinueError="False" in_DateTimeStart="[CType(in_Config(&quot;StartProcessingDate&quot;), DateTime).ToString(&quot;s&quot;)]" in_MailCC="[Split(in_Config(&quot;MailCC_All&quot;).ToString,&quot;;&quot;)]" in_MailCCO="[Split(in_Config(&quot;MailBCC_All&quot;).ToString,&quot;;&quot;)]" in_MailTo="[Split(in_Config(&quot;MailTO_All&quot;).ToString,&quot;;&quot;)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
